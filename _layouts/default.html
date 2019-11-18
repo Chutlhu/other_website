@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html%}
+
+  <body>
+
+    {% include header.html%}
+
+    <div id="page">
+
+      <div id="sidebar">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/publications">Publications</a></li>
+            <li><a href="/teaching">Teaching</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/archives">Archive</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="content">
+        {{ content }}
+      </div>
+
+    </div>
+
+    {% include footer.html %}
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/assets/js/jquery.mobilemenu.min.js"></script>
+
+    {% include scripts.html %}
+
+  </body>
+
+  </html>

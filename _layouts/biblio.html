@@ -1,0 +1,56 @@
+---
+---
+
+<h3>{{entry.title}}</h3>
+<p>{{entry.author}}<br>
+   <i>{{entry.journal}}</i><br>
+   {{entry.year}}</p>
+
+<button onclick="showTextInBoxBelow('{{key}}-bibtex')">BibTex</button>
+
+{% if entry.abstract %}
+<button onclick="showTextInBoxBelow('{{key}}-abstract')">Abstract</button>
+{% endif %}
+
+{% if entry.url %}
+<button onclick="openTab('{{entry.url}}')">
+    <font color='#268bd2' style="text-decoration: underline">[Code]</font>
+</button>
+{% endif %}
+
+{% if entry.arxiv %}
+<button onclick="openTab('https://arxiv.org/abs/' + '{{entry.arxiv }}')">
+    <font color='#268bd2' style="text-decoration: underline">[arXiv]</font>
+</button>
+
+{% endif %}
+
+{% if entry.hal_id %}
+<button onclick="openTab('http://hal.inria.fr/' + '{{entry.hal_id }}')">
+    <font color='#268bd2' style="text-decoration: underline">[HAL]</font>
+</button>
+{% endif %}
+
+{% if entry.doi %}
+<button onclick="openTab('http://doi.org/' + '{{entry.doi }}')">
+    <font color='#268bd2' style="text-decoration: underline">[DOI]</font>
+</button>
+{% endif %}
+
+<div id="{{key}}-bibtex" style="display:none;">
+    <div class="highlight">
+        <code>
+        {{entry.bibtex}}
+        </code>
+    </div>
+</div>
+
+<div id="{{key}}-abstract" style="display:none;">
+        <div class="highlight">
+            <code><i>
+                {{entry.abstract}}</i>
+            </code>
+        </div>
+</div>
+
+<br>

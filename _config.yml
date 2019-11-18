@@ -1,0 +1,54 @@
+###############
+# Site settings
+
+name: Diego Di Carlo
+email: diego.di-carlo@inria.rf
+url: http://example.org
+description: Avangarde. Post. Currently Ph.D. Student. With a wholehearted taste for Brutal Death Metal, Spiders and Cthulhu.
+
+
+###########################3
+# Jekyll Settings
+include: ['_pages']
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+# Pagination
+paginate: 10
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-paginate
+  - 'jekyll/scholar'
+
+gems: [jekyll-paginate]
+
+################
+# Jekyll Scholar
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  source: ./_bibliography/
+  bibliography: papers.bib
+  bibliography_template: biblio #{{reference}}
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
+
+####################
+# Social Integration
+github_username: # your GitHub user name
+linkedin_username: # your LinkedIn user name
+scholar_userid: # your Google Scholar ID
+orcid_id: # your ORCID ID
+
+
